@@ -34,6 +34,12 @@ public class demo {
                 String nextLevel; // untuk Menaikkan Level
                 int gameOper;
                 int PiLevel=1;
+                int aKumulasi[]= new int[6];
+                int NilaiPasJalan=0;
+                // Akumulasi Nilai
+                int StarNilaiO=PiLevel-1;
+                aKumulasi[StarNilaiO]=NilaiPasJalan;
+                // End Off Akumulasi Nilai
                 System.out.println("Selamat Datang " + cariY);
                 do{
                     int kesempatan=5;
@@ -44,6 +50,7 @@ public class demo {
                     Pang=PiLevel*100;
                     System.out.println("Silahkan Tebak Antara 1 s/d " + Pang);
                     int AngKaAcak=angkaRandom.nextInt(Pang);
+                    
                     for(Kout=0;Kout<=5;Kout++){
                         if(Kout==5){
                             System.out.println("GAMEOVER! Anda Gagal");
@@ -54,29 +61,31 @@ public class demo {
                             System.out.println("Tebakan Anda ? " + AngKaAcak);
                             int AkuTeb=input2.nextInt();
                             int Kurang=4-Kout;
-                            int NilaiPasJalan=0;
+                            
                             // Mengakumulasi Nilai
+                            
                             // Akumulasi Selesai
                             if(AkuTeb==AngKaAcak){
                                 // Penilaian
                                 if(Kout==0){
-                                    NilaiJalan=PiLevel*100;
+                                    NilaiPasJalan=PiLevel*100;
                                 }
                                 else if(Kout==1){
-                                    NilaiJalan=PiLevel*70;
+                                    NilaiPasJalan=PiLevel*70;
                                 }
                                 else if(Kout==2){
-                                    NilaiJalan=PiLevel*50;
+                                    NilaiPasJalan=PiLevel*50;
                                 }
                                 else if(Kout==3){
-                                    NilaiJalan=PiLevel*30;
+                                    NilaiPasJalan=PiLevel*30;
                                 }
                                 else{
-                                    NilaiJalan=0;
+                                    NilaiPasJalan=0;
                                 }
                             //
                                 int NeTebak=Kout+1;
-                                System.out.println("Selamat Anda berhasil menebak Angka dalam " + NeTebak + " kali tebakan. Sekor anda adalah " + NilaiJalan);
+                                aKumulasi
+                                System.out.println("Selamat Anda berhasil menebak Angka dalam " + NeTebak + " kali tebakan. Sekor anda adalah " + NilaiPasJalan);
                                 break;
 
                             }
