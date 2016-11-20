@@ -1,16 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.xdr.app12141372;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Random;
 
 /**
- *
- * @author XDARR
+ * 12141372
+ * @author XDARR (KADARYANTO)
  */
 import java.util.Scanner;
 public class demo {
@@ -33,12 +28,10 @@ public class demo {
                 // Tebak
                 
               // ------------------- START EDIT HERE
-                String pindahLevel;
                 int gameOper;
                 int AngKaAcak=angkaRandom.nextInt(10);
                 do{
-                    int kesempatan=5;
-                    
+                    int kesempatan=5;                    
                     System.out.println("Tabakan Anda ? " + AngKaAcak);
                     int SendiriTebak=input.nextInt();
                     if(AngKaAcak==SendiriTebak){
