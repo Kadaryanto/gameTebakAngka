@@ -95,15 +95,15 @@ public class demo {
                     else{
                     aKumulasi[StarNilaiO]=NilaiPasJalan; // Membuat Array Nilai   
                     System.out.println("Ketik 'next' dan tekan enter untuk lanjut ke Level berikutnya atau ketik 'exit' untuk keluar : ");
-                    nextLevel=input.nextLine();
-                    PiLevel++;
+                    nextLevel=input.nextLine(); // inputan next level atau exit
+                    PiLevel++; // Level bertambah setelah input Next Level
                     
                     }
                    
                 }
                 while(!"exit".equals(nextLevel));
               
-              // ------------------- END OF EDIT
+              // ------------------- END OF SCRIPT GAME TEBAK
             } // Stop Looping Nama Pemain
             // Ngolah Nilai
             for(int rO=0; rO<5; rO++){ // membuat array nilai pada tiap level, untuk kemudian dijumlahkan
