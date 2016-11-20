@@ -19,25 +19,19 @@ public class demo {
             System.out.println("Masukkan 'Nama' anda atau tekan 'y' untuk keluar, kemudian tekan enter = ");
             cariY=input.nextLine();
             namaPemain.add(cariY);
-            int NilaiJalan = 0;
-            int CekGameOver=0;
+            int NilaiJalan = 0; // Variabel nilai 
+            int CekGameOver=0; // Cek Game over. bernilai jika GameOver
             
-            int aKumulasi[]= new int[6];
-            int NilaiPasJalan=0;
+            int aKumulasi[]= new int[6]; // Membuat array nilai tiap level permainan
+            int NilaiPasJalan=0; // Varibel nilai
             // Mulai Ngegame
-            if(!("y").equals(cariY)){
-                // Mulai Tebak
-                
-                // Tebak
-                
-              // ------------------- START EDIT HERE
+            if(!("y").equals(cariY)){  
+              // ------------------- START SCRIPT TEBAK DISINI --------------------------  
                 String nextLevel; // untuk Menaikkan Level
                 int gameOper;
                 int PiLevel=1;
-                
                 // Akumulasi Nilai
-                
-                
+              
                 // End Off Akumulasi Nilai
                 System.out.println("Selamat Datang " + cariY);
                 do{
