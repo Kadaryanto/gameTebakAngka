@@ -18,26 +18,30 @@ public class demo {
         boolean PlayaGain = false;
         String cariY; // Untuk mencari nilai Y, jika input y, maka otomatis akan keluar
         do{
-            System.out.println("Masukkan Nama anda atau tekan y untuk keluar, kemudian tekan enter = ");
+            System.out.println("Masukkan 'Nama' anda atau tekan 'y' untuk keluar, kemudian tekan enter = ");
             cariY=input.nextLine();
             namaPemain.add(cariY);
             // Mulai Ngegame
-            if(!"y".equals(cariY)){
+            if(!("y").equals(cariY)){
                 // Mulai Tebak
                 System.out.println("Mulai Game");
                 // Tebak
                 
               // ------------------- START EDIT HERE
-                String nextLevel;
-                int gameOper;
-                int AngKaAcak=angkaRandom.nextInt(10);
-                do{
-                    int kesempatan=5;                    
-                    System.out.println("Tabakan Anda ? " + AngKaAcak);
-                    nextLevel=input.nextLine();
-                   
-                }
-                while(!("exit").equals(nextLevel));
+              int KoT, AnG;  
+              int aNGk=angkaRandom.nextInt(10);
+              for(KoT=0;KoT<5;KoT++){
+                  System.out.println("Level" + KoT + " - ");
+                  System.out.println("Tebakan Anda ? (" + aNGk + ")");
+                  int iPT=input.nextInt();
+                  if(aNGk==iPT){
+                       System.out.println("Teebakan Tepat");
+                       break;
+                  }
+                  else{
+                      System.out.println("Salah");
+                  }
+              }
               
               // ------------------- END OF EDIT
             } // Stop Looping Nama Pemain
