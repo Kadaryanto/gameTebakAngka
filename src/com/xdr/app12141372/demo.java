@@ -24,7 +24,6 @@ public class demo {
             // Mulai Ngegame
             if(!("y").equals(cariY)){
                 // Mulai Tebak
-                System.out.println("Mulai Game");
                 // Tebak
                 
               // ------------------- START EDIT HERE
@@ -32,9 +31,37 @@ public class demo {
                 int gameOper;
                 do{
                     int kesempatan=5;
-                    int AngKaAcak=angkaRandom.nextInt(10);
+                    int Kot, Ang, Pang;
+                    int PiLevel=0;
+                    System.out.println("# Level 1");
+                    System.out.println("Selamat Datang " + cariY);
+                    Pang=PiLevel+1*100;
+                    System.out.println("Silahkan Tebak Antara 1 s/d " + Pang);
+                    int AngKaAcak=angkaRandom.nextInt(Pang);
+                    for(Kot=0;Kot<2;Kot++){
+
+                        System.out.println("Tebakan Anda ? " + AngKaAcak);
+                        int AkuTeb=input.nextInt();
+                        int Kurang=5-Kot;
+                        if(AkuTeb==AngKaAcak){
+                            System.out.println("Jawaban Betul");
+                            break;
+                            
+                        }
+                        else{
+                            if(AkuTeb>AngKaAcak){
+                                System.out.println("Tebakan Anda terlalu Besar! Anda mempunya kesempatan " + Kurang + " lagi" );
+                            }
+                            else{
+                                System.out.println("Tebakan Anda terlalu Kecil! Anda mempunya kesempatan " + Kurang + " lagi" );
+                            }
+                            Kot++;
+                        }
+                    }
                     System.out.println("Ketik 'next' dan tekan enter untuk lanjut ke Level berikutnya atau 'exit' untuk keluar : ");
                     nextLevel=input.nextLine();
+                    PiLevel++;
+                    
                    
                 }
                 while(!"exit".equals(nextLevel));
