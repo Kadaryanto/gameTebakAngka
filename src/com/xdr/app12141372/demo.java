@@ -7,7 +7,6 @@ import java.util.Random;
  * 12141372
  * @author XDARR (KADARYANTO)
  */
-import java.util.Scanner;
 public class demo {
     public static void main(String[] args) {
         ArrayList <String> namaPemain = new ArrayList<>();
@@ -126,19 +125,18 @@ public class demo {
               // ------------------- END OF EDIT
             } // Stop Looping Nama Pemain
             // Ngolah Nilai
-            for(int rO=0; rO<5; rO++){
-                NilaiJalan=NilaiJalan+aKumulasi[rO];
+            for(int rO=0; rO<5; rO++){ // membuat array nilai pada tiap level, untuk kemudian dijumlahkan
+                NilaiJalan=NilaiJalan+aKumulasi[rO];  
             }
-            sekorPermainan.add(NilaiJalan);
-            
+            sekorPermainan.add(NilaiJalan); // Menambahkan Nilai Akhir pada masing masing peserta
         }        
-        while(!"y".equals(cariY));
-        int jumPemain=namaPemain.size();
+        while(!"y".equals(cariY)); // Jika diiputkan y, maka akan keluar
+        int jumPemain=namaPemain.size(); // Mengambil jumlah Rercord dalam array, untuk menghilangkan y paling belakang
         System.out.println("SCORE");
         System.out.println("=================================");
         int l;
         for(l=0;l<jumPemain-1;l++){
-            System.out.println(namaPemain.get(l) + " : " + sekorPermainan.get(l));
+            System.out.println(namaPemain.get(l) + " : " + sekorPermainan.get(l)); // Menampilkan Skore di Akhir permainan
         }
     }
 }
