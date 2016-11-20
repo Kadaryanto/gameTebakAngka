@@ -59,11 +59,16 @@ public class demo {
                             }
                         }
                     }
+                    if(PiLevel==5){ // Jika sudah Mencapai Level 5, langsung di break/otomatis Exit
+                        break;
+                    }
+                    else{
+                        
                     System.out.println("Level Anda : " + PiLevel);
                     System.out.println("Ketik 'next' dan tekan enter untuk lanjut ke Level berikutnya atau 'exit' untuk keluar : ");
                     nextLevel=input.nextLine();
                     PiLevel++;
-                    
+                    }
                    
                 }
                 while(!"exit".equals(nextLevel));
