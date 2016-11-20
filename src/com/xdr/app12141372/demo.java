@@ -28,20 +28,16 @@ public class demo {
                 // Tebak
                 
               // ------------------- START EDIT HERE
-              int KoT, AnG;  
-              int aNGk=angkaRandom.nextInt(10);
-              for(KoT=0;KoT<5;KoT++){
-                  System.out.println("Level" + KoT + " - ");
-                  System.out.println("Tebakan Anda ? (" + aNGk + ")");
-                  int iPT=input.nextInt();
-                  if(aNGk==iPT){
-                       System.out.println("Teebakan Tepat");
-                       break;
-                  }
-                  else{
-                      System.out.println("Salah");
-                  }
-              }
+                String nextLevel; // untuk Menaikkan Level
+                int gameOper;
+                do{
+                    int kesempatan=5;
+                    int AngKaAcak=angkaRandom.nextInt(10);
+                    System.out.println("Ketik 'next' dan tekan enter untuk lanjut ke Level berikutnya atau 'exit' untuk keluar : ");
+                    nextLevel=input.nextLine();
+                   
+                }
+                while(!"exit".equals(nextLevel));
               
               // ------------------- END OF EDIT
             } // Stop Looping Nama Pemain
