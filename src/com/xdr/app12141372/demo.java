@@ -28,42 +28,30 @@ public class demo {
             if(!("y").equals(cariY)){  
               // ------------------- START SCRIPT TEBAK DISINI --------------------------  
                 String nextLevel; // untuk Menaikkan Level
-                int gameOper;
-                int PiLevel=1;
-                // Akumulasi Nilai
-              
-                // End Off Akumulasi Nilai
-                System.out.println("Selamat Datang " + cariY);
+                int PiLevel=1;   // Untuk menentukan Level Pertama
+                System.out.println("Selamat Datang " + cariY); // Untuk memberikan sambutan kepada Pemain
                 do{
-                    int kesempatan=5;
                     int Kout, Ang, Pang;
-                    
                     System.out.println("# Level " + PiLevel);
-                    int StarNilaiO=PiLevel-1;
-                    
-                    Pang=PiLevel*100;
+                    int StarNilaiO=PiLevel-1;    
+                    Pang=PiLevel*100; // Menaiikan Nilai dan Angka Random pada tiap level
                     System.out.println("Silahkan Tebak Antara 1 s/d " + Pang);
                     System.out.println("Anda mempunyai kesempatan menebak 5 kali.");
-                    int AngKaAcak=angkaRandom.nextInt(Pang);
-                    
+                    int AngKaAcak=angkaRandom.nextInt(Pang); // Mulai mengacak Nomor
+                    // Mulai Looping 5 kali kesempatan. disni malah 6 kali, karena yg ke 6 untuk memberikan variabel GameOver
                     for(Kout=0;Kout<=5;Kout++){
-                        if(Kout==5){
+                        if(Kout==5){ // Jika Loop ke 6, maka dipastikan GameOver
                             System.out.println("GAMEOVER! Anda Gagal");
-                            CekGameOver++;
+                            CekGameOver++; // Memberikan nilai ++ (1), untuk memunculkan game Over
                         }
-                        else{
-                            
+                        else{  
                             System.out.println("Tebakan Anda ? " + AngKaAcak);
-                            int AkuTeb=input2.nextInt();
+                            int AkuTeb=input2.nextInt(); // Menginput Tebakan
                             int Kurang=4-Kout;
-                            
-                            // Mengakumulasi Nilai
-                            
-                            // Akumulasi Selesai
-                            if(AkuTeb==AngKaAcak){
-                                // Penilaian
+                            if(AkuTeb==AngKaAcak){ // JIka inputan dan random sama
+                                // Penilaian. Memberikan nilai ketika berhasil menebak, dikalikan dengan Level
                                 if(Kout==0){
-                                    NilaiPasJalan=PiLevel*100;
+                                    NilaiPasJalan=PiLevel*100; 
                                 }
                                 else if(Kout==1){
                                     NilaiPasJalan=PiLevel*70;
@@ -77,7 +65,7 @@ public class demo {
                                 else{
                                     NilaiPasJalan=0;
                                 }
-                            //
+                                // Memberikan informasi tebakan keberapa yang telah berhasil
                                 int NeTebak=Kout+1;
                                 
                                 System.out.println("Selamat Anda berhasil menebak Angka dalam " + NeTebak + " kali tebakan. Sekor anda adalah " + NilaiPasJalan);
