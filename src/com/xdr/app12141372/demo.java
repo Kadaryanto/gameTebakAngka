@@ -24,6 +24,9 @@ public class demo {
             namaPemain.add(cariY);
             int NilaiJalan = 0;
             int CekGameOver=0;
+            
+            int aKumulasi[]= new int[6];
+            int NilaiPasJalan=0;
             // Mulai Ngegame
             if(!("y").equals(cariY)){
                 // Mulai Tebak
@@ -34,11 +37,10 @@ public class demo {
                 String nextLevel; // untuk Menaikkan Level
                 int gameOper;
                 int PiLevel=1;
-                int aKumulasi[]= new int[6];
-                int NilaiPasJalan=0;
+                
                 // Akumulasi Nilai
-                int StarNilaiO=PiLevel-1;
-                aKumulasi[StarNilaiO]=NilaiPasJalan;
+                
+                
                 // End Off Akumulasi Nilai
                 System.out.println("Selamat Datang " + cariY);
                 do{
@@ -46,6 +48,7 @@ public class demo {
                     int Kout, Ang, Pang;
                     
                     System.out.println("# Level " + PiLevel);
+                    int StarNilaiO=PiLevel-1;
                     
                     Pang=PiLevel*100;
                     System.out.println("Silahkan Tebak Antara 1 s/d " + Pang);
@@ -84,7 +87,7 @@ public class demo {
                                 }
                             //
                                 int NeTebak=Kout+1;
-                                aKumulasi
+                                
                                 System.out.println("Selamat Anda berhasil menebak Angka dalam " + NeTebak + " kali tebakan. Sekor anda adalah " + NilaiPasJalan);
                                 break;
 
@@ -109,7 +112,7 @@ public class demo {
                         break;
                     }
                     else{
-                        
+                    aKumulasi[StarNilaiO]=NilaiPasJalan;    
                     System.out.println("Level Anda : " + PiLevel);
                     System.out.println("Ketik 'next' dan tekan enter untuk lanjut ke Level berikutnya atau 'exit' untuk keluar : ");
                     nextLevel=input.nextLine();
@@ -122,6 +125,10 @@ public class demo {
               
               // ------------------- END OF EDIT
             } // Stop Looping Nama Pemain
+            // Ngolah Nilai
+            for(int rO=0; rO<5; rO++){
+                NilaiJalan=NilaiJalan+aKumulasi[rO];
+            }
             sekorPermainan.add(NilaiJalan);
             
         }        
