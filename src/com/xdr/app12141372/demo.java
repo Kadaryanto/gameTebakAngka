@@ -13,6 +13,7 @@ public class demo {
         ArrayList <String> namaPemain = new ArrayList<>();
         ArrayList <Integer> sekorPermainan = new ArrayList<>();
         Scanner input = new Scanner(System.in);
+        Scanner input2= new Scanner(System.in);
         Random angkaRandom=new Random();
         String Na="no";
         boolean PlayaGain = false;
@@ -29,20 +30,21 @@ public class demo {
               // ------------------- START EDIT HERE
                 String nextLevel; // untuk Menaikkan Level
                 int gameOper;
+                int PiLevel=1;
                 do{
                     int kesempatan=5;
-                    int Kot, Ang, Pang;
-                    int PiLevel=0;
-                    System.out.println("# Level 1");
+                    int Kout, Ang, Pang;
+                    
+                    System.out.println("# Level " + PiLevel);
                     System.out.println("Selamat Datang " + cariY);
-                    Pang=PiLevel+1*100;
+                    Pang=PiLevel*100;
                     System.out.println("Silahkan Tebak Antara 1 s/d " + Pang);
                     int AngKaAcak=angkaRandom.nextInt(Pang);
-                    for(Kot=0;Kot<2;Kot++){
+                    for(Kout=0;Kout<5;Kout++){
 
                         System.out.println("Tebakan Anda ? " + AngKaAcak);
-                        int AkuTeb=input.nextInt();
-                        int Kurang=5-Kot;
+                        int AkuTeb=input2.nextInt();
+                        int Kurang=4-Kout;
                         if(AkuTeb==AngKaAcak){
                             System.out.println("Jawaban Betul");
                             break;
@@ -50,14 +52,14 @@ public class demo {
                         }
                         else{
                             if(AkuTeb>AngKaAcak){
-                                System.out.println("Tebakan Anda terlalu Besar! Anda mempunya kesempatan " + Kurang + " lagi" );
+                                System.out.println("Tebakan Anda terlalu Besar! Anda mempunyai kesempatan " + Kurang + " kali lagi" );
                             }
                             else{
-                                System.out.println("Tebakan Anda terlalu Kecil! Anda mempunya kesempatan " + Kurang + " lagi" );
+                                System.out.println("Tebakan Anda terlalu Kecil! Anda mempunyai kesempatan " + Kurang + " kali lagi" );
                             }
-                            Kot++;
                         }
                     }
+                    System.out.println("Level Anda : " + PiLevel);
                     System.out.println("Ketik 'next' dan tekan enter untuk lanjut ke Level berikutnya atau 'exit' untuk keluar : ");
                     nextLevel=input.nextLine();
                     PiLevel++;
