@@ -25,18 +25,20 @@ public class demo {
             // Mulai Ngegame
             if(!("y").equals(cariY)){
                 // Mulai Tebak
+                int NilaiJalan=0;
                 // Tebak
                 
               // ------------------- START EDIT HERE
                 String nextLevel; // untuk Menaikkan Level
                 int gameOper;
                 int PiLevel=1;
+                System.out.println("Selamat Datang " + cariY);
                 do{
                     int kesempatan=5;
                     int Kout, Ang, Pang;
                     
                     System.out.println("# Level " + PiLevel);
-                    System.out.println("Selamat Datang " + cariY);
+                    
                     Pang=PiLevel*100;
                     System.out.println("Silahkan Tebak Antara 1 s/d " + Pang);
                     int AngKaAcak=angkaRandom.nextInt(Pang);
@@ -55,10 +57,12 @@ public class demo {
                                 System.out.println("Tebakan Anda terlalu Besar! Anda mempunyai kesempatan " + Kurang + " kali lagi" );
                             }
                             else{
+                                
                                 System.out.println("Tebakan Anda terlalu Kecil! Anda mempunyai kesempatan " + Kurang + " kali lagi" );
                             }
                         }
                     }
+                    // Memapankan Nilai :D
                     if(PiLevel==5){ // Jika sudah Mencapai Level 5, langsung di break/otomatis Exit
                         break;
                     }
