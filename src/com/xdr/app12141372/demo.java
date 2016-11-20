@@ -23,6 +23,7 @@ public class demo {
             cariY=input.nextLine();
             namaPemain.add(cariY);
             int NilaiJalan = 0;
+            int CekGameOver=0;
             // Mulai Ngegame
             if(!("y").equals(cariY)){
                 // Mulai Tebak
@@ -43,44 +44,56 @@ public class demo {
                     Pang=PiLevel*100;
                     System.out.println("Silahkan Tebak Antara 1 s/d " + Pang);
                     int AngKaAcak=angkaRandom.nextInt(Pang);
-                    for(Kout=0;Kout<5;Kout++){
-
-                        System.out.println("Tebakan Anda ? " + AngKaAcak);
-                        int AkuTeb=input2.nextInt();
-                        int Kurang=4-Kout;
-                        int NilaiPasJalan=0;
-                        if(AkuTeb==AngKaAcak){
-                            // Penilaian
-                            if(Kout==0){
-                                NilaiJalan=PiLevel*100;
-                            }
-                            else if(Kout==1){
-                                NilaiJalan=PiLevel*70;
-                            }
-                            else if(Kout==2){
-                                NilaiJalan=PiLevel*50;
-                            }
-                            else if(Kout==3){
-                                NilaiJalan=PiLevel*30;
-                            }
-                            else{
-                                NilaiJalan=0;
-                            }
-                        //
-                            int NeTebak=Kout+1;
-                            System.out.println("Selamat Anda berhasil menebak Angka dalam " + NeTebak + " kali tebakan. Sekor anda adalah " + NilaiJalan);
-                            break;
-                            
+                    for(Kout=0;Kout<=5;Kout++){
+                        if(Kout==5){
+                            System.out.println("GAMEOVER! Anda Gagal");
+                            CekGameOver++;
                         }
                         else{
-                            if(AkuTeb>AngKaAcak){
-                                System.out.println("Tebakan Anda terlalu Besar! Anda mempunyai kesempatan " + Kurang + " kali lagi" );
+                            
+                            System.out.println("Tebakan Anda ? " + AngKaAcak);
+                            int AkuTeb=input2.nextInt();
+                            int Kurang=4-Kout;
+                            int NilaiPasJalan=0;
+                            // Mengakumulasi Nilai
+                            // Akumulasi Selesai
+                            if(AkuTeb==AngKaAcak){
+                                // Penilaian
+                                if(Kout==0){
+                                    NilaiJalan=PiLevel*100;
+                                }
+                                else if(Kout==1){
+                                    NilaiJalan=PiLevel*70;
+                                }
+                                else if(Kout==2){
+                                    NilaiJalan=PiLevel*50;
+                                }
+                                else if(Kout==3){
+                                    NilaiJalan=PiLevel*30;
+                                }
+                                else{
+                                    NilaiJalan=0;
+                                }
+                            //
+                                int NeTebak=Kout+1;
+                                System.out.println("Selamat Anda berhasil menebak Angka dalam " + NeTebak + " kali tebakan. Sekor anda adalah " + NilaiJalan);
+                                break;
+
                             }
                             else{
-                                
-                                System.out.println("Tebakan Anda terlalu Kecil! Anda mempunyai kesempatan " + Kurang + " kali lagi" );
+                                if(AkuTeb>AngKaAcak){
+                                    System.out.println("Tebakan Anda terlalu Besar! Anda mempunyai kesempatan " + Kurang + " kali lagi" );
+                                }
+                                else{
+
+                                    System.out.println("Tebakan Anda terlalu Kecil! Anda mempunyai kesempatan " + Kurang + " kali lagi" );
+                                }
                             }
                         }
+                    }
+                    // Jika GameOver
+                    if(CekGameOver>0){
+                        break;
                     }
                     // Memapankan Nilai :D
                     if(PiLevel==5){ // Jika sudah Mencapai Level 5, langsung di break/otomatis Exit
@@ -92,6 +105,7 @@ public class demo {
                     System.out.println("Ketik 'next' dan tekan enter untuk lanjut ke Level berikutnya atau 'exit' untuk keluar : ");
                     nextLevel=input.nextLine();
                     PiLevel++;
+                    
                     }
                    
                 }
