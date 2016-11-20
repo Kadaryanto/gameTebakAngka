@@ -22,29 +22,28 @@ public class demo {
             cariY=input.nextLine();
             namaPemain.add(cariY);
             // Mulai Ngegame
-            if(cariY!="y"){
+            if(!"y".equals(cariY)){
                 // Mulai Tebak
                 System.out.println("Mulai Game");
                 // Tebak
                 
               // ------------------- START EDIT HERE
+                String nextLevel;
                 int gameOper;
                 int AngKaAcak=angkaRandom.nextInt(10);
                 do{
                     int kesempatan=5;                    
                     System.out.println("Tabakan Anda ? " + AngKaAcak);
-                    int SendiriTebak=input.nextInt();
-                    if(AngKaAcak==SendiriTebak){
-                        gameOper=1;
-                    }
+                    nextLevel=input.nextLine();
+                   
                 }
-                while(gameOper==1);
+                while(!("exit").equals(nextLevel));
               
               // ------------------- END OF EDIT
             } // Stop Looping Nama Pemain
             
         }        
-        while(!("y").equals(cariY));
+        while(!"y".equals(cariY));
         int jumPemain=namaPemain.size();
         System.out.println("SCORE");
         System.out.println("=================================");
