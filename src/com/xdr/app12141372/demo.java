@@ -9,13 +9,11 @@ import java.util.Random;
  */
 public class demo {
     public static void main(String[] args) {
-        ArrayList <String> namaPemain = new ArrayList<>();
-        ArrayList <Integer> sekorPermainan = new ArrayList<>();
-        Scanner input = new Scanner(System.in);
-        Scanner input2= new Scanner(System.in);
-        Random angkaRandom=new Random();
-        String Na="no";
-        boolean PlayaGain = false;
+        ArrayList <String> namaPemain = new ArrayList<>(); // Membuat array Nama Pemain
+        ArrayList <Integer> sekorPermainan = new ArrayList<>(); // Membuat array Sekor Pemain
+        Scanner input = new Scanner(System.in); // Input pertama
+        Scanner input2= new Scanner(System.in); // Input kedua
+        Random angkaRandom=new Random(); // Mengacak angka
         String cariY; // Untuk mencari nilai Y, jika input y, maka otomatis akan keluar
         do{
             System.out.println("Masukkan 'Nama' anda atau tekan 'y' untuk keluar, kemudian tekan enter = ");
@@ -51,6 +49,7 @@ public class demo {
                     
                     Pang=PiLevel*100;
                     System.out.println("Silahkan Tebak Antara 1 s/d " + Pang);
+                    System.out.println("Anda mempunyai kesempatan menebak 5 kali.");
                     int AngKaAcak=angkaRandom.nextInt(Pang);
                     
                     for(Kout=0;Kout<=5;Kout++){
@@ -102,18 +101,18 @@ public class demo {
                             }
                         }
                     }
-                    // Jika GameOver
+                    // Jika GameOver, game over dideteksi dari looping ke-6 yang tidak memunculkan input
+                    // jawaban, tetapi langsung memberikan nilai ke CekGameOver,
                     if(CekGameOver>0){
                         break;
                     }
-                    // Memapankan Nilai :D
+                    // Level 5 adalah Level Maksimal
                     if(PiLevel==5){ // Jika sudah Mencapai Level 5, langsung di break/otomatis Exit
                         break;
                     }
                     else{
-                    aKumulasi[StarNilaiO]=NilaiPasJalan;    
-                    System.out.println("Level Anda : " + PiLevel);
-                    System.out.println("Ketik 'next' dan tekan enter untuk lanjut ke Level berikutnya atau 'exit' untuk keluar : ");
+                    aKumulasi[StarNilaiO]=NilaiPasJalan; // Membuat Array Nilai   
+                    System.out.println("Ketik 'next' dan tekan enter untuk lanjut ke Level berikutnya atau ketik 'exit' untuk keluar : ");
                     nextLevel=input.nextLine();
                     PiLevel++;
                     
