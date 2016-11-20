@@ -22,10 +22,11 @@ public class demo {
             System.out.println("Masukkan 'Nama' anda atau tekan 'y' untuk keluar, kemudian tekan enter = ");
             cariY=input.nextLine();
             namaPemain.add(cariY);
+            int NilaiJalan = 0;
             // Mulai Ngegame
             if(!("y").equals(cariY)){
                 // Mulai Tebak
-                int NilaiJalan=0;
+                
                 // Tebak
                 
               // ------------------- START EDIT HERE
@@ -47,8 +48,27 @@ public class demo {
                         System.out.println("Tebakan Anda ? " + AngKaAcak);
                         int AkuTeb=input2.nextInt();
                         int Kurang=4-Kout;
+                        int NilaiPasJalan=0;
                         if(AkuTeb==AngKaAcak){
-                            System.out.println("Jawaban Betul");
+                            // Penilaian
+                            if(Kout==0){
+                                NilaiJalan=PiLevel*100;
+                            }
+                            else if(Kout==1){
+                                NilaiJalan=PiLevel*70;
+                            }
+                            else if(Kout==2){
+                                NilaiJalan=PiLevel*50;
+                            }
+                            else if(Kout==3){
+                                NilaiJalan=PiLevel*30;
+                            }
+                            else{
+                                NilaiJalan=0;
+                            }
+                        //
+                            int NeTebak=Kout+1;
+                            System.out.println("Selamat Anda berhasil menebak Angka dalam " + NeTebak + " kali tebakan. Sekor anda adalah " + NilaiJalan);
                             break;
                             
                         }
@@ -79,6 +99,7 @@ public class demo {
               
               // ------------------- END OF EDIT
             } // Stop Looping Nama Pemain
+            sekorPermainan.add(NilaiJalan);
             
         }        
         while(!"y".equals(cariY));
@@ -87,7 +108,7 @@ public class demo {
         System.out.println("=================================");
         int l;
         for(l=0;l<jumPemain-1;l++){
-            System.out.println(namaPemain.get(l));
+            System.out.println(namaPemain.get(l) + " : " + sekorPermainan.get(l));
         }
     }
 }
