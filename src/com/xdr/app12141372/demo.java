@@ -67,18 +67,18 @@ public class demo {
                                 }
                                 // Memberikan informasi tebakan keberapa yang telah berhasil
                                 int NeTebak=Kout+1;
-                                
+                                // Konfirmasi Tebakan Berhasil :)
                                 System.out.println("Selamat Anda berhasil menebak Angka dalam " + NeTebak + " kali tebakan. Sekor anda adalah " + NilaiPasJalan);
                                 break;
 
                             }
-                            else{
+                            else{ // Gagal menebak, akan dimumculkan informasi dan sisa tebakan yang bisa dilakukan
                                 if(AkuTeb>AngKaAcak){
-                                    System.out.println("Tebakan Anda terlalu Besar! Anda mempunyai kesempatan " + Kurang + " kali lagi" );
+                                    System.out.println("Tebakan Anda terlalu Besar! Anda mempunyai kesempatan " + Kurang + " kali lagi" ); // Jika Tebakan lebih besar dari angka random
                                 }
                                 else{
 
-                                    System.out.println("Tebakan Anda terlalu Kecil! Anda mempunyai kesempatan " + Kurang + " kali lagi" );
+                                    System.out.println("Tebakan Anda terlalu Kecil! Anda mempunyai kesempatan " + Kurang + " kali lagi" ); // Jika tebakan lebih kecil dari angka random
                                 }
                             }
                         }
