@@ -45,7 +45,7 @@ public class demo {
                             CekGameOver++; // Memberikan nilai ++ (1), untuk memunculkan game Over
                         }
                         else{  
-                            System.out.println("Tebakan Anda ? " + AngKaAcak);
+                            System.out.println("Tebakan Anda ? ");
                             int AkuTeb=input2.nextInt(); // Menginput Tebakan
                             int Kurang=4-Kout;
                             if(AkuTeb==AngKaAcak){ // JIka inputan dan random sama
