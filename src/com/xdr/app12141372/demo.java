@@ -110,10 +110,11 @@ public class demo {
                 NilaiJalan=NilaiJalan+aKumulasi[rO];  
             }
             sekorPermainan.add(NilaiJalan); // Menambahkan Nilai Akhir pada masing masing peserta
+            
         }        
         while(!"y".equals(cariY)); // Jika diiputkan y, maka akan keluar
         int jumPemain=namaPemain.size(); // Mengambil jumlah Rercord dalam array, dan untuk menghilangkan y paling belakang pada loop dikurangi 1 (-1)
-        System.out.println("SCORE");
+        System.out.println("SCORE AKHIR");
         System.out.println("=================================");
         int l;
         for(l=0;l<jumPemain-1;l++){
