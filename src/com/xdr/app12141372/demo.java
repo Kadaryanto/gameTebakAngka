@@ -28,7 +28,7 @@ public class demo {
             if(!("y").equals(cariY)){  
               // ------------------- START SCRIPT TEBAK DISINI --------------------------  
                 String nextLevel; // untuk Menaikkan Level
-                int PiLevel=1;   // Untuk menentukan Level Pertama
+                int PiLevel=1;   // Untuk menentukan Level Pertama dan selanjutnya akan dinaikkan nilainya 
                 System.out.println("Selamat Datang " + cariY); // Untuk memberikan sambutan kepada Pemain
                 do{
                     int Kout, Ang, Pang;
@@ -133,5 +133,6 @@ public class demo {
         for(l=0;l<jumPemain-1;l++){
             System.out.println(namaPemain.get(l) + " : " + sekorPermainan.get(l)); // Menampilkan Skore di Akhir permainan
         }
+        System.out.println("=================================");
     }
 }
