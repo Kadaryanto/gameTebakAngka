@@ -110,6 +110,23 @@ public class demo {
                 NilaiJalan=NilaiJalan+aKumulasi[rO];  
             }
             sekorPermainan.add(NilaiJalan); // Menambahkan Nilai Akhir pada masing masing peserta
+            // SCORE SEMENTARA
+            System.out.println("SCORE SEMENTARA");
+            System.out.println("---------------");
+            int xSemen, ySemen;
+            int xJumSemen=namaPemain.size();
+            // MENGHILANGKAN y SUPAYA TIDAK DITAMPILKAN
+            int xJumKurangY;
+            if(xJumSemen==1){
+                xJumKurangY=1;
+            }
+            else{
+                xJumKurangY=xJumSemen-1;
+            }
+            for(xSemen=0;xSemen<xJumKurangY;xSemen++){
+                System.out.println(namaPemain.get(xSemen) + " : " + sekorPermainan.get(xSemen));
+            }
+            System.out.println("---------------");
             
         }        
         while(!"y".equals(cariY)); // Jika diiputkan y, maka akan keluar
