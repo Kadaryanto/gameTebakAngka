@@ -20,7 +20,7 @@ public class demo {
             cariY=input.nextLine();
             namaPemain.add(cariY);
             int NilaiJalan = 0; // Variabel nilai 
-            int CekGameOver=0; // Cek Game over. bernilai jika GameOver
+            int CekGameOver=0; // Cek Game over. bernilai 1 jika GameOver
             
             int aKumulasi[]= new int[6]; // Membuat array nilai tiap level permainan
             int NilaiPasJalan=0; // Varibel nilai
@@ -51,19 +51,19 @@ public class demo {
                             if(AkuTeb==AngKaAcak){ // JIka inputan dan random sama
                                 // Penilaian. Memberikan nilai ketika berhasil menebak, dikalikan dengan Level
                                 if(Kout==0){
-                                    NilaiPasJalan=PiLevel*100; 
+                                    NilaiPasJalan=PiLevel*100; // 1 x tebak, level x kan 100
                                 }
                                 else if(Kout==1){
-                                    NilaiPasJalan=PiLevel*70;
+                                    NilaiPasJalan=PiLevel*70; // 2 x tebak, level x kan 70
                                 }
                                 else if(Kout==2){
-                                    NilaiPasJalan=PiLevel*50;
+                                    NilaiPasJalan=PiLevel*50; // 3 x tebak, level x kan 50
                                 }
                                 else if(Kout==3){
-                                    NilaiPasJalan=PiLevel*30;
+                                    NilaiPasJalan=PiLevel*30; // 4 x tebak, level x kan 30
                                 }
                                 else{
-                                    NilaiPasJalan=0;
+                                    NilaiPasJalan=0; // 5 x tebak, level x kan 0
                                 }
                                 // Memberikan informasi tebakan keberapa yang telah berhasil
                                 int NeTebak=Kout+1;
@@ -112,7 +112,7 @@ public class demo {
             sekorPermainan.add(NilaiJalan); // Menambahkan Nilai Akhir pada masing masing peserta
         }        
         while(!"y".equals(cariY)); // Jika diiputkan y, maka akan keluar
-        int jumPemain=namaPemain.size(); // Mengambil jumlah Rercord dalam array, untuk menghilangkan y paling belakang
+        int jumPemain=namaPemain.size(); // Mengambil jumlah Rercord dalam array, dan untuk menghilangkan y paling belakang pada loop dikurangi 1 (-1)
         System.out.println("SCORE");
         System.out.println("=================================");
         int l;
