@@ -111,14 +111,14 @@ public class demo {
             }
             sekorPermainan.add(NilaiJalan); // Menambahkan Nilai Akhir pada masing masing peserta
             // SCORE SEMENTARA
-            if(!"y".equals(cariY)){
+            if(!"y".equals(cariY)){ // Skore akan ditampilkan sementara, tetaapi jika y diinputkan, akan dilewati
                             
                     System.out.println("SCORE SEMENTARA");
                     System.out.println("---------------");
-                    int xSemen, ySemen;
+                    int xSemen, ySemen; // Dklarasi variabel loop dan array
                     int xJumSemen=namaPemain.size();
                   
-                    for(xSemen=0;xSemen<xJumSemen;xSemen++){
+                    for(xSemen=0;xSemen<xJumSemen;xSemen++){ // Looping memunculkan nama dan nilai dalam array
                         System.out.println(namaPemain.get(xSemen) + " : " + sekorPermainan.get(xSemen));
                     }
                     System.out.println("---------------");
